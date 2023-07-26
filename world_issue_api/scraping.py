@@ -231,28 +231,8 @@ cursor_db = con.cursor()
 cursor_db.execute('DELETE FROM issue_api_issue')
 con.commit()
 
+country = [USA(), Japan(), India(), France(), Germany(), UK(), Italy(), Korea()]
+#Canada()  Brazil() 추가예정
 
-response = requests.post("http://127.0.0.1:8000/Issue/", json=USA())
-response = requests.post("http://127.0.0.1:8000/Issue/", json=Japan())
-response = requests.post("http://127.0.0.1:8000/Issue/", json=India())
-response = requests.post("http://127.0.0.1:8000/Issue/", json=France())
-# response = requests.post("http://127.0.0.1:8000/Issue/", json=Canada()) # 문제있음
-response = requests.post("http://127.0.0.1:8000/Issue/", json=Germany()) # 유료임
-response = requests.post("http://127.0.0.1:8000/Issue/", json=UK())
-response = requests.post("http://127.0.0.1:8000/Issue/", json=Italy())
-# response = requests.post("http://127.0.0.1:8000/Issue/", json=Brazil()) # 문제있음
-response = requests.post("http://127.0.0.1:8000/Issue/", json=Korea())
-
-
-
-
-# USA() 
-# Japan() 
-# India()
-# France()
-# Canada()
-# Germany()
-# UK()
-# Italy()
-# Brazil()
-# Korea()
+for i in range(len(country)):
+    requests.post("http://127.0.0.1:8000/Issue/", json=country[i])
