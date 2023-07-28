@@ -224,15 +224,16 @@ def Korea():
     }
     return result
 
-import sqlite3
-# 이전 데이터 삭제
-con = sqlite3.connect('./db.sqlite3')
-cursor_db = con.cursor()
-cursor_db.execute('DELETE FROM issue_api_issue')
-con.commit()
+# import sqlite3
+# # 이전 데이터 삭제
+# con = sqlite3.connect('./db.sqlite3')
+# cursor_db = con.cursor()
+# cursor_db.execute('DELETE FROM issue_api_issue')
+# con.commit()
 
 country = [USA(), Japan(), India(), France(), Germany(), UK(), Italy(), Korea()]
 #Canada()  Brazil() 추가예정
 
 for i in range(len(country)):
-    requests.post("http://127.0.0.1:8000/Issue/", json=country[i])
+    print(i)
+    requests.put("http://223.130.139.67:8000/Issue/" + str(i+1), json=country[i])
