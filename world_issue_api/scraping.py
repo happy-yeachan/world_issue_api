@@ -135,7 +135,7 @@ def Germany():
     title = get_translate(str(title))
 
     result = {
-        'country': 'Germany',
+        'country': '독일',
         'title': title,
         'img': img,
         'url': url
@@ -157,7 +157,7 @@ def UK():
     title = get_translate(str(title))
 
     result = {
-        'country': 'UK',
+        'country': '영국',
         'title': title,
         'img': img,
         'url': url
@@ -177,7 +177,7 @@ def Italy():
     title = get_translate(str(title))
 
     result = {
-        'country': 'Italy',
+        'country': '이탈리아',
         'title': title,
         'img': img,
         'url': url
@@ -197,7 +197,7 @@ def Brazil():
     # title = get_translate(str(title))
 
     result = {
-        'country': 'Brazil',
+        'country': '브라질',
         'title': title,
         'img': img,
         'url': url
@@ -217,23 +217,22 @@ def Korea():
     title = re.sub(r"^\s+|\s+$", "", title)
 
     result = {
-        'country': 'Korea',
+        'country': '대한민국',
         'title': title,
         'img': img,
         'url': url
     }
     return result
 
-# import sqlite3
-# # 이전 데이터 삭제
-# con = sqlite3.connect('./db.sqlite3')
-# cursor_db = con.cursor()
-# cursor_db.execute('DELETE FROM issue_api_issue')
-# con.commit()
 
+from datetime import datetime
 country = [USA(), Japan(), India(), France(), Germany(), UK(), Italy(), Korea()]
 #Canada()  Brazil() 추가예정
 
 for i in range(len(country)):
     print(i)
-    requests.put("http://223.130.139.67:8000/Issue/" + str(i+1), json=country[i])
+    requests.patch("http://223.130.139.67:8000/Issue/" + str(i+1) + "/", json=country[i])
+    requests.patch("http://223.130.139.67:8000/Issue/" + str(i+1) + "/", {
+        "visite_count":0,
+        "created_at":datetime.today().strftime("%Y%m%d") 
+    })
