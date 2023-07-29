@@ -189,12 +189,11 @@ def Brazil():
     url = 'https://www.uol.com.br/'
     page = requests.get(url)
     soup = BeautifulSoup(page.content, 'html.parser')
-    
-    title = soup.select_one('#lkj543zr').text    
+    title = soup.select_one('#app > div > div:nth-child(7) > section:nth-child(2) > div > div > div:nth-child(2) > div > div.col-24.col-lg-15 > article > a > h3').text    
     img = soup.select_one('#app > div > div:nth-child(7) > section:nth-child(2) > div > div > div:nth-child(2) > div > div.col-24.col-lg-15 > article > a > figure > picture > img')['src']    
     url =  soup.select_one('#app > div > div:nth-child(7) > section:nth-child(2) > div > div > div:nth-child(2) > div > div.col-24.col-lg-15 > article > a')['href']       
     title = re.sub(r"^\s+|\s+$", "", title)
-    # title = get_translate(str(title))
+    title = get_translate(str(title))
 
     result = {
         'country': '브라질',
@@ -225,14 +224,16 @@ def Korea():
     return result
 
 
-from datetime import datetime
-country = [USA(), Japan(), India(), France(), Germany(), UK(), Italy(), Korea()]
-#Canada()  Brazil() 추가예정
+# from datetime import datetime
+# country = [USA(), Japan(), India(), France(), Germany(), UK(), Italy(), Korea()]
+# #Canada()  Brazil() 추가예정
 
-for i in range(len(country)):
-    print(i)
-    requests.patch("http://223.130.139.67:8000/Issue/" + str(i+1) + "/", json=country[i])
-    requests.patch("http://223.130.139.67:8000/Issue/" + str(i+1) + "/", {
-        "visite_count":0,
-        "created_at":datetime.today().strftime("%Y%m%d") 
-    })
+# for i in range(len(country)):
+#     print(i)
+#     requests.patch("http://223.130.139.67:8000/Issue/" + str(i+1) + "/", json=country[i])
+#     requests.patch("http://223.130.139.67:8000/Issue/" + str(i+1) + "/", {
+#         "visite_count":0,
+#         "created_at":datetime.today().strftime("%Y%m%d") 
+#     })
+
+requests.post("http://223.130.139.67:8000/Issue/", json=Brazil())
