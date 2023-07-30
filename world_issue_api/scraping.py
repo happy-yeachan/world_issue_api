@@ -261,7 +261,7 @@ for i in range(len(country)):
     requests.patch("http://223.130.139.67:8000/Issue/" + str(i+1) + "/", country[i])
     requests.patch("http://223.130.139.67:8000/Issue/" + str(i+1) + "/", {
         "visite_count":0,
-        "created_at":datetime.today().strftime("%Y%m%d") 
+        "created_at":datetime.today().strftime("%Y-%m-%d") 
     })
 
 # requests.post("http://223.130.139.67:8000/Issue/", json=Brazil())
