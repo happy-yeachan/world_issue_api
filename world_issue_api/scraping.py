@@ -224,16 +224,44 @@ def Korea():
     return result
 
 
-# from datetime import datetime
-# country = [USA(), Japan(), India(), France(), Germany(), UK(), Italy(), Korea()]
+def Vietnam():
+    url = 'https://thanhnien.vn'
+    page = requests.get(url)
+    soup = BeautifulSoup(page.content, 'html.parser')
+    img=url
+    title = soup.select_one('#content > div.section__home-focus > div > div > div.section__hf-main > div > div > div > div.item-first > div > h2 > a').text
+    img = soup.select_one('#content > div.section__home-focus > div > div > div.section__hf-main > div > div > div > div.item-first > a > img')['src']
+    url +=  soup.select_one('#content > div.section__home-focus > div > div > div.section__hf-main > div > div > div > div.item-first > div > h2 > a')['href']
+    title = re.sub(r"^\s+|\s+$", "", title)
+    title = get_translate(str(title))
+
+    result = {
+        'country': '베트남',
+        'title': title,
+        'img': img,
+        'url': url
+    }
+    return result
+
+#신규 나라 추가 코드 예시
+# requests.post("http://223.130.139.67:8000/Issue/", json=Vietnam()) 
+
+from datetime import datetime
+country = [USA(), Japan(), India(), France(), {
+        'country': '독일',
+        'title': "스크래핑이 안돼",
+        'img': "idk",
+        'url': "google.com"
+    }, UK(), Italy(), Korea(), Vietnam()]
 # #Canada()  Brazil() 추가예정
 
-# for i in range(len(country)):
-#     print(i)
-#     requests.patch("http://223.130.139.67:8000/Issue/" + str(i+1) + "/", json=country[i])
-#     requests.patch("http://223.130.139.67:8000/Issue/" + str(i+1) + "/", {
-#         "visite_count":0,
-#         "created_at":datetime.today().strftime("%Y%m%d") 
-#     })
+# 조회수 0으로 초기화와 동시에 기사 내용 최신화
+for i in range(len(country)):
+    print(datetime.today().strftime("%Y%m%d") )
+    requests.patch("http://223.130.139.67:8000/Issue/" + str(i+1) + "/", country[i])
+    requests.patch("http://223.130.139.67:8000/Issue/" + str(i+1) + "/", {
+        "visite_count":0,
+        "created_at":datetime.today().strftime("%Y%m%d") 
+    })
 
-requests.post("http://223.130.139.67:8000/Issue/", json=Brazil())
+# requests.post("http://223.130.139.67:8000/Issue/", json=Brazil())
