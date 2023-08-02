@@ -174,7 +174,7 @@ def Italy():
     img = soup.select_one('#home > main > div:nth-child(2) > div.gd-column-8 > section:nth-child(1) > div > div > article > figure > a > picture > img')['src']    
     url =  soup.select_one('#home > main > div:nth-child(2) > div.gd-column-8 > section:nth-child(1) > div > div > article > div > h2 > a:nth-child(1)')['href']   
     title = re.sub(r"^\s+|\s+$", "", title)
-    title = get_translate(str(title))
+    # title = get_translate(str(title))
 
     result = {
         'country': '이탈리아',
@@ -247,12 +247,7 @@ def Vietnam():
 # requests.post("http://223.130.139.67:8000/Issue/", json=Vietnam()) 
 
 from datetime import datetime
-country = [USA(), Japan(), India(), France(), {
-        'country': '독일',
-        'title': "스크래핑이 안돼",
-        'img': "idk",
-        'url': "google.com"
-    }, UK(), Italy(), Korea(), Vietnam()]
+country = [USA(), Japan(), India(), France(), Germany(), UK(), Italy(), Korea(), Vietnam()]
 # #Canada()  Brazil() 추가예정
 
 # 조회수 0으로 초기화와 동시에 기사 내용 최신화
