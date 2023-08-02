@@ -92,7 +92,7 @@ country_infos=[
         '이탈리아',
         False
     ),
-    # news_scraping(
+    # func.news_scraping(
     #     'https://www.uol.com.br/',
     #     'https://www.uol.com.br/',
     #     '#app > div > div:nth-child(7) > section:nth-child(2) > div > div > div:nth-child(2) > div > div.col-24.col-lg-15 > article > a > h3',
