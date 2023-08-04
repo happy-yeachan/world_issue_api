@@ -20,13 +20,13 @@ for c_info in country_info.country_infos:
         )
     )
 
-
+print(country)
 # 조회수 0으로 초기화와 동시에 기사 내용 최신화
 for i in range(len(country)):
     print(datetime.today().strftime("%Y-%m-%d %H:%M") )
     requests.patch("http://223.130.139.67:8000/Issue/" + str(i+1) + "/", country[i])
     requests.patch("http://223.130.139.67:8000/Issue/" + str(i+1) + "/", {
-        "visite_count":0,
+        "visit_count":0,
         "created_at":datetime.today().strftime("%Y-%m-%d %H:%M") 
     })
 

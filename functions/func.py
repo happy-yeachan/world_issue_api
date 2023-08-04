@@ -25,16 +25,25 @@ def news_scraping(url_address,second_url_address,title_path,img_path,url_path,co
             'url': second_url_address + url,        
         }
         #url 주소가 덧붙여서 나오는 나라들임, 그 때 그 떄 마다 다를 수 있어서 수정필요
-        if country_name=='인도'  or country_name=='프랑스' or country_name=='독일' or country_name == '일본' or country_name=='이탈리아' or country_name=='대한민국' or country_name=='영국' or country_name=='베트남':
+        if country_name=='인도'  or country_name=='프랑스' or country_name=='독일' or country_name=='이탈리아' or country_name=='대한민국' or country_name=='영국' or country_name=='베트남':
             result['url']=url
         print(result['url'])
         content=content_scraping(result['url'],content_path)
         result['content']=content
         return result
-    except Exception as ex:            
+    except Exception as ex:
+        result = {
+            'country': 'error',
+            'title': 'error',
+            'img': 'error',
+            'url': 'error',
+            'content': 'error',
+        }            
         print('error:',end='')
-        print(country_name)    
+        print(country_name)   
+        print(result) 
         print(ex)
+        return result
 
 def content_scraping(url,content_path):
     
