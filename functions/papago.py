@@ -1,4 +1,3 @@
-import requests
 import json
 import urllib.request
 from secret import *
@@ -34,3 +33,4 @@ def get_lang(text):
     else:
         print("Error Code:" + rescode)
 
+print(get_translate("Hello, I'm yeachan"))
