@@ -49,17 +49,17 @@ country_infos=[
         'article_url':'#habillagepub > section.zone.zone--homepage > section.area.area--main.old__area-main.old__area > div > a',
         'country_name':'프랑스',
         'is_korea':False,
-        'article_path':'#id-1070203 > div.content--live'
+        'article_path':'#habillagepub > section > section > article'
     },
     {
         'url':'https://www.thestar.com/news/canada/',
         'plus_url':'https://www.thestar.com/news/canada',
-        'title_path':'#card-summary-6aea2cdf-7874-526b-80c9-bd5aa5db79d8 > div > div.card-body > div.card-headline > h3 > a',
-        'img_path':'#card-summary-3f9057df-e038-528c-ac9f-cc6f703bbc00 > div > div.card-image > div > figure > div > a > img',
-        'article_url':'#card-summary-6aea2cdf-7874-526b-80c9-bd5aa5db79d8 > div > div.card-body > div.card-headline > h3 > a',
+        'title_path':'#card-summary-cdc07702-b3b8-5b1f-9c12-a6ddcbe32637 > div > div.card-body > div.card-headline > h3 > a',
+        'img_path':'#card-summary-cdc07702-b3b8-5b1f-9c12-a6ddcbe32637 > div > div.card-image > div > figure > div > a > img',
+        'article_url':'#card-summary-cdc07702-b3b8-5b1f-9c12-a6ddcbe32637 > div > div.card-body > div.card-headline > h3 > a',
         'country_name':'캐나다',
         'is_korea':False,
-        'article_path':0,
+        'article_path':'#asset-content > div.asset-body',
     },
     {
         'url':'https://iz.ru/',
