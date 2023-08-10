@@ -17,7 +17,7 @@ for c_info in country_info.country_infos:
             c_info['is_korea'],
             c_info['article_path'],
         )
-    )
+    ) 
 # 조회수 0으로 초기화와 동시에 기사 내용 최신화
 for i in range(len(country)):
     print(datetime.today().strftime("%Y-%m-%d %H:%M") )
