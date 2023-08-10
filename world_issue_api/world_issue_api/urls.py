@@ -10,5 +10,5 @@ router.register('Issue', IssueViewSet)
 urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
     re_path(r'^', include(router.urls)),
-    path('issue/visit/<int:pk>/', IssueViewSet.as_view({'post': 'increment_visit_count'}), name='increment-visit-count'),
+    path('Issue/visit/<int:pk>/', IssueViewSet.as_view({'post': 'increment_visit_count'}), name='increment-visit-count'),
 ]

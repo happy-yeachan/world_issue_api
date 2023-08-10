@@ -32,5 +32,3 @@ def get_lang(text):
         return lang['langCode']
     else:
         print("Error Code:" + rescode)
-
-print(get_translate("Hello, I'm yeachan"))

@@ -39,10 +39,6 @@ for i in range(len(country)):
     else:
         print("Failed to update:")
 
-    # requests.post("http://223.130.139.67:8000/Issue/", country[i])
-    # requests.post("http://223.130.139.67:8000/Issue/", {
-    #     "visit_count":0,
-    #     "created_at":datetime.today().strftime("%Y-%m-%d %H:%M") 
-    # })
+
 
 # requests.post("http://223.130.139.67:8000/Issue/", json=Brazil())

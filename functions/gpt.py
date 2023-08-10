@@ -1,5 +1,5 @@
-# import openai
-# from secret import *
+import openai
+from secret import *
 
 def gpt(content):
     # 발급받은 API 키 설정
