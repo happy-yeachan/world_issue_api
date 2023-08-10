@@ -9,6 +9,10 @@
 #   8. 아티클 경로
 # ]
 
+
+#멋사로고 이미지 경로(위키피디아)
+lion_img='https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/%EB%A9%8B%EC%9F%81%EC%9D%B4%EC%82%AC%EC%9E%90%EC%B2%98%EB%9F%BC_%EB%A1%9C%EA%B3%A0.png/692px-%EB%A9%8B%EC%9F%81%EC%9D%B4%EC%82%AC%EC%9E%90%EC%B2%98%EB%9F%BC_%EB%A1%9C%EA%B3%A0.png'
+
 # #Canada()  Brazil() 추가예정
 country_infos=[
     {
@@ -62,14 +66,14 @@ country_infos=[
         'article_path':'#asset-content > div.asset-body',
     },
     {
-        'url':'https://iz.ru/',
-        'plus_url':'https://iz.ru/',
-        'title_path':'#block-front-bt-a > div > div.main-events-table__inside__left.article-box > div > div > div.main-news-big-img__inside__top',
-        'img_path':'#block-front-bt-a > div > div.main-events-table__inside__left.article-box > div > div > div.main-news-big-img__inside__top',
-        'article_url':'#block-front-bt-a > div > div.main-events-table__inside__left.article-box > div > div > div.main-news-big-img__inside__top > a',
+        'url':'https://ria.ru/',
+        'plus_url':'https://ria.ru/',
+        'title_path':'#content > div > div:nth-child(2) > div.section__cell > div.section__content > div:nth-child(1) > div:nth-child(1) > div > div > div > div > div > div.cell-main-photo__text > div.cell-main-photo__desc > div.cell-main-photo__title',
+        'img_path':'#content > div > div:nth-child(2) > div.section__cell > div.section__content > div:nth-child(1) > div:nth-child(1) > div > div > div > div > div > div.cell-main-photo__image > picture > img',
+        'article_url':'#content > div > div:nth-child(2) > div.section__cell > div.section__content > div:nth-child(1) > div:nth-child(1) > div > div > div > div > div > a',
         'country_name':'러시아',
         'is_korea':False,
-        'article_path':0
+        'article_path':'#endless > div.endless__item.m-active > div > div > div > div.layout-article__over > div.layout-article__main > div > div:nth-child(1) > div.article__body.js-mediator-article.mia-analytics'
     },
     {
         'url':'https://www.faz.net/aktuell/',
@@ -102,14 +106,14 @@ country_infos=[
         'article_path':'#article-body > div.story__text',
     },
     {
-        'url':'https://www.uol.com.br/',
-        'plus_url':'https://www.uol.com.br/',
-        'title_path':'#app > div > div:nth-child(7) > section:nth-child(2) > div > div > div:nth-child(2) > div > div.col-24.col-lg-15 > article > a > h3',
-        'img_path':'#app > div > div:nth-child(7) > section:nth-child(2) > div > div > div:nth-child(2) > div > div.col-24.col-lg-15 > article > a > figure > picture > img',
-        'article_url':'#app > div > div:nth-child(7) > section:nth-child(2) > div > div > div:nth-child(2) > div > div.col-24.col-lg-15 > article > a',
+        'url':'https://www.estadao.com.br/',
+        'plus_url':'https://www.estadao.com.br',    
+        'title_path':'#fusion-app > div > div:nth-child(2) > div:nth-child(1) > div > div > div.styles__Tag-sc-1kqcjew-0.styles__TagStyled-sc-1kqcjew-1.jizfvP.fhItmR.col-12.col-xl-8 > div > div.info > a > h2',
+        'img_path':'#fusion-app > div > div:nth-child(2) > div:nth-child(1) > div > div > div.styles__Tag-sc-1kqcjew-0.styles__TagStyled-sc-1kqcjew-1.jizfvP.fhItmR.col-12.col-xl-8 > div > div.slick-slider.carrossel-item.slick-initialized > div > div > div.slick-slide.slick-active.slick-current > div > div > a > img',
+        'article_url':'#fusion-app > div > div:nth-child(2) > div:nth-child(1) > div > div > div.styles__Tag-sc-1kqcjew-0.styles__TagStyled-sc-1kqcjew-1.jizfvP.fhItmR.col-12.col-xl-8 > div > div.info > a',
         'country_name':'브라질',
         'is_korea':False,  
-        'article_path':0,      
+        'article_path':'#content > div.styles__ContentWrapperContainerStyled-sc-1ehbu6v-0.klsZKo.content-wrapper.news-body.container.content.template-reportagem',      
     },
     {
         'url':'https://www.joongang.co.kr/',
@@ -152,43 +156,43 @@ country_infos=[
         'article_path':'#tdi_115 > div > div.vc_column.tdi_118.wpb_column.vc_column_container.tdc-column.td-pb-span8 > div > div.td_block_wrap.tdb_single_content.tdi_130.td-pb-border-top.td_block_template_1.td-post-content.tagdiv-type > div',
     },
     {
-        'url':'https://www.thelocal.es/',
-        'plus_url':'https://www.thelocal.es/',
-        'title_path':'#main > div > div > div:nth-child(1) > div > div.hp-new__article.hp-new__article--1.hp-new__article--mobileRight > article > div > h3 > a',
-        'img_path':'#main > div > div > div:nth-child(1) > div > div.hp-new__article.hp-new__article--1.hp-new__article--mobileRight > article > a > img',
-        'article_url':'#main > div > div > div:nth-child(1) > div > div.hp-new__article.hp-new__article--1.hp-new__article--mobileRight > article > div > h3 > a',
+        'url':'https://cincodias.elpais.com/',
+        'plus_url':'https://cincodias.elpais.com',
+        'title_path':'#fusion-app > main > div.z.z-hi > section._g._g-md._g-o.b.b-d > div.b-d_b.b_op._g._g-md.b_op-1-2 > article > header > h2 > a',
+        'img_path':'#fusion-app > main > div.z.z-hi > section._g._g-md._g-o.b.b-d > div.b-d_b.b_op._g._g-md.b_op-1-2 > article > figure > a > img',
+        'article_url':'#fusion-app > main > div.z.z-hi > section._g._g-md._g-o.b.b-d > div.b-d_b.b_op._g._g-md.b_op-1-2 > article > header > h2 > a',
         'country_name':'스페인',
         'is_korea':False,
-        'article_path':'#main > div.article-single.article-single--regular > div.container-md > div > div.col-xl-8.mobile-full-width > main > div.article-single__content.cXenseParse',                   
+        'article_path':'#fusion-app > article > div.a_c.clearfix',                   
     },
     {
-        'url':'https://www.thejakartapost.com/',
-        'plus_url':'https://www.thejakartapost.com',
-        'title_path':'body > div.col-xs-12.tjpcontainer > div.container.borderGrid > div:nth-child(2) > div > div > div.col-xs-12.columns.mainChannel.wdsk.wtbl > div.jpRow.mainNews.lineSection.sectionHeadLine > div.bigHeadline > div > div.descNews.col-md-4 > a:nth-child(2) > h2',
-        'img_path':'body > div.col-xs-12.tjpcontainer > div.container.borderGrid > div:nth-child(2) > div > div > div.col-xs-12.columns.mainChannel.wdsk.wtbl > div.jpRow.mainNews.lineSection.sectionHeadLine > div.bigHeadline > div > div.col-md-8 > a > div > img',
-        'article_url':'body > div.col-xs-12.tjpcontainer > div.container.borderGrid > div:nth-child(2) > div > div > div.col-xs-12.columns.mainChannel.wdsk.wtbl > div.jpRow.mainNews.lineSection.sectionHeadLine > div.bigHeadline > div > div.descNews.col-md-4 > a:nth-child(2)',
+        'url':'https://www.kompas.com/',
+        'plus_url':'https://www.kompas.com',
+        'title_path':'#general-container > div:nth-child(6) > div.col-bs10-7 > div.headline.ga--headline.clearfix > div.headline__big.clearfix > ul > div > div > li.headline__big__item.slick-slide.slick-current.slick-active > a > div.headline__big__box > h1',
+        'img_path':'#general-container > div:nth-child(6) > div.col-bs10-7 > div.headline.ga--headline.clearfix > div.headline__big.clearfix > ul > div > div > li.headline__big__item.slick-slide.slick-current.slick-active > a > div.headline__big__img > img',
+        'article_url':'#general-container > div:nth-child(6) > div.col-bs10-7 > div.headline.ga--headline.clearfix > div.headline__big.clearfix > ul > div > div > li.headline__big__item.slick-slide.slick-current.slick-active > a',
         'country_name':'인도네시아',
         'is_korea':False,
-        'article_path':'body > div.col-xs-12.tjpcontainer.channelSingle > div.container.single-page > div.row.loop > div:nth-child(1) > div > div.col-xs-12.columns.main-single-page.multiSingle > div > div.col-xs-12.main-single > div > div.col-xs-12.stop > div > div.col-md-10.col-xs-12.detailNews',
+        'article_path':'body > div.wrap > div.container.clearfix > div.row.col-offset-fluid.clearfix.js-giant-wp-sticky-parent > div.col-bs10-7.js-read-article > div.read__article.mt2.clearfix.js-tower-sticky-parent > div.col-bs9-7 > div.read__content > div',
     },
     {
-        'url':'https://www.dutchnews.nl/',
-        'plus_url':'https://www.dutchnews.nl',
-        'title_path':'#main > div:nth-child(1) > div > div.col-12.col-md-6.col-xl-7.px-0.px-md-4.mb-6.mb-md-0.pb-xl-8 > div.px-4.px-md-0.pt-5.pb-6.py-md-4.pt-lg-3.pb-lg-0 > h2 > a',
-        'img_path':'#main > div:nth-child(1) > div > div.col-12.col-md-6.col-xl-7.px-0.px-md-4.mb-6.mb-md-0.pb-xl-8 > a > div > img',
-        'article_url':'#main > div:nth-child(1) > div > div.col-12.col-md-6.col-xl-7.px-0.px-md-4.mb-6.mb-md-0.pb-xl-8 > a',
+        'url':'https://www.nrc.nl/',
+        'plus_url':'https://www.nrc.nl',
+        'title_path':'#item176594 > div > a > header > h3',
+        'img_path':'#item176594 > div > a > div > figure > picture > img',
+        'article_url':'#item176594 > div > a',
         'country_name':'네덜란드',
         'is_korea':False,
         'article_path':'#main > article > main',
     },
     {
-        'url':'https://www.arabnews.com/',
-        'plus_url':'https://www.arabnews.com',
-        'title_path':'#main-wrap > div:nth-child(3) > div > main > div.grid-container.small-grid-collapse > div:nth-child(1) > div > div > div > div > div > div.article-item > div.article-item-overbox.grid-x.align-bottom > div > div.article-item-title.bottom-spacer--s > h1 > a',
-        'img_path':'#main-wrap > div:nth-child(3) > div > main > div.grid-container.small-grid-collapse > div:nth-child(1) > div > div > div > div > div > div.article-item > div.article-item-img > img',
-        'article_url':'#main-wrap > div:nth-child(3) > div > main > div.grid-container.small-grid-collapse > div:nth-child(1) > div > div > div > div > div > div.article-item > div.article-item-overbox.grid-x.align-bottom > div > div.article-item-title.bottom-spacer--s > h1 > a',
-        'country_name':'사우디아라비아',
+        'url':'https://www.philstar.com/',
+        'plus_url':'https://www.philstar.com',
+        'title_path':'#carousel_light > div > div > div.carousel__item.carousel__item-0 > div.carousel__item__title > h2 > a',
+        'img_path':'#carousel_light > div > div > div.carousel__item.carousel__item-0 > div.carousel__item__image > a > picture > img',
+        'article_url':'#carousel_light > div > div > div.carousel__item.carousel__item-0 > div.carousel__item__title > h2 > a',
+        'country_name':'필리핀',
         'is_korea':False,
-        'article_path':'#content-articles > div.pageWrapper.active > article > div.grid-x.entry-article-inner.align-center > div.cell.large-auto > div.printable-area.shareable > div.entry-content > div.field.field-name-body.field-type-text-with-summary.field-label-hidden > div > div',
+        'article_path':'#sports_article_writeup',
     }    
 ]
