@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from papago import *
 import re
-from gpt import *
+# from gpt import *
 import country_info
 
 def news_scraping(url_address,second_url_address,title_path,img_path,url_path,country_name,is_korea,content_path):    
@@ -52,8 +52,8 @@ def news_scraping(url_address,second_url_address,title_path,img_path,url_path,co
         print(ex)
         result = {
             'country': country_name,
-            'title': 'error',
-            'img': 'https://img.joongang.co.kr/svcimg/1000/index/202308/25183618_327_20230809192920.jpg/_ir_586x319_/',
+            'title': 'Not-Found',
+            'img': country_info.lion_img,
             'url': 'https://www.joongang.co.kr/article/25183618',        
         }
         result['content']='error' 
@@ -63,5 +63,5 @@ def content_scraping(url,content_path):
     page = requests.get(url)
     soup = BeautifulSoup(page.content, 'html.parser')    
     content = soup.select_one(content_path).text
-    content = gpt(content)
+    # content = gpt(content)
     return content
