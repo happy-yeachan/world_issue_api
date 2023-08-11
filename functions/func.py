@@ -2,22 +2,22 @@ import requests
 from bs4 import BeautifulSoup
 from papago import *
 import re
-from gpt import *
+# from gpt import *
 import country_info
 
-def news_scraping(url_address,second_url_address,title_path,img_path,url_path,country_name,is_korea,content_path):    
+def news_scraping(url_address,second_url_address,title_path,img_path,url_path,country_name,is_korea,content_path,special_picture):    
     try:
-        url = url_address
+        url = url_address              
         page = requests.get(url)
         soup = BeautifulSoup(page.content, 'html.parser')
         title = soup.select_one(title_path).text
         #이미지 url이 request 했을 때 error를 유발하는 나라들은 고정 이미지를 할당
-        if country_name=='캐나다' or country_name=='네덜란드':
-            img = country_info.lion_img
+        if country_name=='인도' or country_name=='캐나다' or country_name=='네덜란드':
+            img = special_picture
         else:
             img = soup.select_one(img_path)['src']
         #tmg url이 상대경로인 경우의 나라
-        if country_name=='인도' or country_name=='멕시코' or country_name=='인도네시아' or country_name=='네덜란드':
+        if country_name=='멕시코' or country_name=='인도네시아' or country_name=='네덜란드':
             img=second_url_address+img
         #a태그의 url이 상대경로인 나라
         if country_name=='영국' or country_name=='베트남':
@@ -28,11 +28,11 @@ def news_scraping(url_address,second_url_address,title_path,img_path,url_path,co
         title = re.sub(r"^\s+|\s+$", "", title)
         if not is_korea:
             title = get_translate(str(title))
-        #img를 불러올 수 있는지 확인하기 위에 get요청을 보냄
+        #img를 불러올 수 있는지 확인하기 위에 get요청을 보냄            
         img_status = requests.get(img)
         #img를 불러오지 못했다면 고정 이미지를 할당
         if not img_status.status_code == 200:
-            img = country_info.lion_img
+            img = special_picture
         result = {
             'country': country_name,
             'title': title,
@@ -63,5 +63,5 @@ def content_scraping(url,content_path):
     page = requests.get(url)
     soup = BeautifulSoup(page.content, 'html.parser')    
     content = soup.select_one(content_path).text
-    content = gpt(content)
+    # content = gpt(content)
     return content
