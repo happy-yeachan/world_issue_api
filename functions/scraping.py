@@ -14,7 +14,6 @@ for c_info in country_info.country_infos:
             c_info['img_path'],
             c_info['article_url'],
             c_info['country_name'],
-            c_info['is_korea'],
             c_info['article_path'],
             c_info['spcial_picture'],
         )
