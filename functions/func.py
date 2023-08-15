@@ -21,12 +21,13 @@ def news_scraping(url_address,second_url_address,title_path,img_path,url_path,co
             title = get_translate(str(title))
 
         #이미지 예외 처리
-        if country_name == '러시아':
+        if country_name == '독일':
             prop = 'srcset'
+            img = soup.select_one(img_path)[prop].split()[0]
         else:
             prop = 'src'
+            img = soup.select_one(img_path)[prop]
 
-        img = soup.select_one(img_path)[prop]
 
 
         #img url이 상대경로인 경우의 나라
@@ -40,10 +41,8 @@ def news_scraping(url_address,second_url_address,title_path,img_path,url_path,co
             img = special_picture
 
         url = soup.select_one(url_path)['href']
-        print(url)
         #a태그의 url이 상대경로인 나라
         if url[0] != 'h':
-            print("실행")
             url =  second_url_address + url         
 
 
@@ -58,7 +57,6 @@ def news_scraping(url_address,second_url_address,title_path,img_path,url_path,co
             'content': content,
             'url': url,        
         }
-
 
     #에러 날 시 title을 error로 지정하고 img와 url은 한밭대 멋사로 넣는다.(형식을 맞춰 오류가 안나게 하기 위함 아무거나 상관 x)        
     except Exception as ex:

@@ -12,7 +12,7 @@ def gpt(content):
     model = "gpt-3.5-turbo"
 
     # 질문 작성하기
-    query = content + "/n 이 기사를 3개의 한국어 말머리로 요약해줘"
+    query = content + "/n 번호로 다섯 줄 한국어 요약"
 
     # 메시지 설정하기
     messages = [
