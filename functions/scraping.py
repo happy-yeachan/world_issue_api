@@ -20,7 +20,7 @@ for c_info in country_info.country_infos:
     ) 
 # 조회수 0으로 초기화와 동시에 기사 내용 최신화
 for i in range(len(country)):
-    if country[i]["country"] != "Not-Found":
+    if country[i]["title"] != "Not-Found":
         print(datetime.today().strftime("%Y-%m-%d %H:%M") )
         update_data = {
         "country": country[i]["country"],
@@ -38,7 +38,7 @@ for i in range(len(country)):
         else:
             print(country[i]["country"], "Failed to update:")
     else:
-        print(country[i]["country"], "erro no pattch")
+        print(country[i]["country"], "erro no patch")
         response = requests.patch("http://223.130.139.67:8000/Issue/" + str(i+1) + "/", {
         "visit_count": 0,
         })
