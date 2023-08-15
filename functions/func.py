@@ -11,23 +11,17 @@ def news_scraping(url_address,second_url_address,title_path,img_path,url_path,co
         page = requests.get(url)
         soup = BeautifulSoup(page.content, 'html.parser')
 
-        #title 예외 처리
-        if country_name=='캐나다':
-            title = soup.select_one(title_path)['aria-label']
-        else:
-            title = soup.select_one(title_path).text
+        title = soup.select_one(title_path).text
 
         # title양 옆 공백 제거
         title = re.sub(r"^\s+|\s+$", "", title)
 
-        # title 번역 후 저장
+        # 한국어가 아니면 title 번역 후 저장
         if country_name != "대한민국":
             title = get_translate(str(title))
 
         #이미지 예외 처리
-        if country_name == '캐나다':
-            prop = 'data-srcset'
-        elif country_name == '러시아':
+        if country_name == '러시아':
             prop = 'srcset'
         else:
             prop = 'src'
@@ -85,5 +79,5 @@ def content_scraping(url,content_path):
     page = requests.get(url)
     soup = BeautifulSoup(page.content, 'html.parser')    
     content = soup.select_one(content_path).text
-    # content = gpt(content)
+    content = gpt(content)
     return content
