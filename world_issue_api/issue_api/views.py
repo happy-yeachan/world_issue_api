@@ -9,7 +9,7 @@ class IssueViewSet(viewsets.ModelViewSet):
     serializer_class = IssueSerializer
 
     @action(detail=True, methods=['post'])
-    def increment_visit_count(self, request, pk=None):
+    def increment_visit_count(self, request, pk=None, str=None):
         issue = self.get_object()
         issue.visit_count += 1
         issue.save()
