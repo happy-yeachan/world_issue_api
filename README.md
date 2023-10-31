@@ -1,3 +1,3 @@
 # world_issue_api
 
-https://github.com/Yu-Jaeyoung/Hackathon_Team_1
+https://github.com/HBNU-LIKELION/Hackathon_Team_1
